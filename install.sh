@@ -12,31 +12,31 @@ CODEX_SKILLS_DIR="$CODEX_HOME/skills"
 
 SKILLS=(
   "decide-for-me"
-  "pst:auto"
-  "pst:claude-md"
-  "pst:code-review"
-  "pst:demo"
-  "pst:figma"
-  "pst:ingest-pdf"
-  "pst:markdown"
-  "pst:next"
-  "pst:patch"
-  "pst:push"
-  "pst:python-refactor"
-  "pst:qa"
-  "pst:rebase"
-  "pst:resolve-threads"
-  "pst:react-refactor"
-  "pst:sweep"
-  "pst:slop"
+  "f3:auto"
+  "f3:claude-md"
+  "f3:code-review"
+  "f3:demo"
+  "f3:figma"
+  "f3:ingest-pdf"
+  "f3:markdown"
+  "f3:next"
+  "f3:patch"
+  "f3:push"
+  "f3:python-refactor"
+  "f3:qa"
+  "f3:rebase"
+  "f3:resolve-threads"
+  "f3:react-refactor"
+  "f3:sweep"
+  "f3:slop"
   "spec-gen"
   "validate-quality-gates"
 )
 
 # Old names that may exist as orphaned symlinks
 OLD_SKILLS=(
-  "pst-code-review"
-  "pst-qa"
+  "f3-code-review"
+  "f3-qa"
 )
 
 # ── Uninstall ────────────────────────────────────────────────────────
@@ -102,8 +102,8 @@ for skill in "${SKILLS[@]}"; do
 done
 
 # ── External skill dependencies ──────────────────────────────────────
-# pst:react-refactor layers on Vercel's react-best-practices.
-# pst:figma layers on Figma's implement-design.
+# f3:react-refactor layers on Vercel's react-best-practices.
+# f3:figma layers on Figma's implement-design.
 # Install globally so every project gets the latest industry rules.
 # NOTE: These are Claude Code-specific via `npx skills add -g`.
 
@@ -136,7 +136,7 @@ else
   echo "Re-run ./install.sh after installing Codex or set CODEX_HOME to enable."
 fi
 echo ""
-echo "Claude commands: /decide-for-me, /pst:auto, /pst:claude-md, /pst:code-review, /pst:demo, /pst:figma, /pst:ingest-pdf, /pst:markdown, /pst:next, /pst:patch, /pst:push, /pst:python-refactor, /pst:qa, /pst:rebase, /pst:react-refactor, /pst:resolve-threads, /pst:slop, /pst:sweep, /spec-gen, /validate-quality-gates"
+echo "Claude commands: /decide-for-me, /f3:auto, /f3:claude-md, /f3:code-review, /f3:demo, /f3:figma, /f3:ingest-pdf, /f3:markdown, /f3:next, /f3:patch, /f3:push, /f3:python-refactor, /f3:qa, /f3:rebase, /f3:react-refactor, /f3:resolve-threads, /f3:slop, /f3:sweep, /spec-gen, /validate-quality-gates"
 if [[ "$CODEX_AVAILABLE" == true ]]; then
-  echo "Codex skills: mention the skill name in your prompt, for example: 'Use pst:push to push this branch and validate the PR.'"
+  echo "Codex skills: mention the skill name in your prompt, for example: 'Use f3:push to push this branch and validate the PR.'"
 fi
